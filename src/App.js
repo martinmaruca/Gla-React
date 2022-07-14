@@ -10,7 +10,7 @@ function App() {
     <>
       <NavBar />
       <ItemListContainer/>
-      <Cards/>
+      <Cards/> 
     </>
 );
 }

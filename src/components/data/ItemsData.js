@@ -1,0 +1,88 @@
+const data = [
+    {
+      "price": 500,
+      "id": 1,
+      "title": "Lukather",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique vel consequuntur fugit commodi",
+      "image": "/img/guitarra_01.jpg" 
+    },
+    {
+      "price": 600,
+      "id": 2,
+      "title": "SRV",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique vel consequuntur fugit commodi",
+      "image": "/img/guitarra_02.jpg"
+    },
+    {
+      "price": 750,
+      "id": 3,
+      "title": "Borland",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique vel consequuntur fugit commodi",
+      "image": "/img/guitarra_03.jpg"
+    },
+    {
+      "price": 399,
+      "id": 4,
+      "title": "VAI",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique vel consequuntur fugit commodi",
+      "image": "/img/guitarra_04.jpg"
+    },
+    {
+      "price": 1400,
+      "id": 5,
+      "title": "Thompson",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique vel consequuntur fugit commodi",
+      "image": "/img/guitarra_05.jpg"
+    },
+    {
+      "price": 1500,
+      "id": 6,
+      "title": "White",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique vel consequuntur fugit commodi",
+      "image": "/img/guitarra_06.jpg"
+    },
+    {
+        "price": 800,
+        "id": 7,
+        "title": "Cobain",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique vel consequuntur fugit commodi",
+        "image": "/img/guitarra_07.jpg"
+      },
+      {
+        "price": 1200,
+        "id": 8,
+        "title": "Dale",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique vel consequuntur fugit commodi",
+        "image": "/img/guitarra_08.jpg"
+      },
+      {
+        "price": 950,
+        "id": 9,
+        "title": "Krieger",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique vel consequuntur fugit commodi",
+        "image": "/img/guitarra_09.jpg"
+      },
+      {
+        "price": 1650,
+        "id": 10,
+        "title": "Campbell",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique vel consequuntur fugit commodi",
+        "image": "/img/guitarra_10.jpg"
+      },
+      {
+        "price": 2000,
+        "id": 11,
+        "title": "Reed",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique vel consequuntur fugit commodi",
+        "image": "/img/guitarra_11.jpg"
+      },
+      {
+        "price": 1500,
+        "id": 12,
+        "title": "Hazel",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique vel consequuntur fugit commodi",
+        "image": "/img/guitarra_12.jpg"
+      },
+  ];
+
+  export default data;
