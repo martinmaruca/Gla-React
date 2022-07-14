@@ -1,6 +1,9 @@
 import ItemCount from "../ItemCount/ItemCount";
 
 const cards = () => {
+    function handleOnAdd(count) {
+        alert(`Se agregaron ${count} al carrito`);
+      }
     return ( 
         <>
     <main className="productos productos__contenedor">
@@ -13,8 +16,7 @@ const cards = () => {
                     <h3 className="producto__nombre">Lukather</h3>
                     <p className="producto__descripcion">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique vel consequuntur fugit commodi</p>
                     <p className="producto__precio">$500</p>
-                    <ItemCount />
-                    <a className="producto__enlace" href="producto.html">Comprar</a>
+                    <ItemCount onAdd={handleOnAdd} stock={10} initial={0}/>
                 </div>
             </div> 
 
@@ -25,8 +27,7 @@ const cards = () => {
                     <h3 className="producto__nombre">SRV</h3>
                     <p className="producto__descripcion">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique vel consequuntur fugit commodi</p>
                     <p className="producto__precio">$600</p>
-                    <ItemCount />
-                    <a className="producto__enlace" href="producto.html">Comprar</a>
+                    <ItemCount onAdd={handleOnAdd} stock={10} initial={0}/>
                 </div>
             </div>
 
@@ -37,8 +38,7 @@ const cards = () => {
                     <h3 className="producto__nombre">Borland</h3>
                     <p className="producto__descripcion">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique vel consequuntur fugit commodi</p>
                     <p className="producto__precio">$750</p>
-                    <ItemCount />
-                    <a className="producto__enlace" href="producto.html">Comprar</a>
+                    <ItemCount onAdd={handleOnAdd} stock={10} initial={0}/>
                 </div>
             </div>
 
