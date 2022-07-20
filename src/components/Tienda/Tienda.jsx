@@ -1,9 +1,10 @@
-import StyledGreeting from "./StyledGreeting";
+import StyledGreeting from "../ItemListContainer/StyledGreeting";
 import itemsdata from "../data/ItemsData";
 import { useState, useEffect } from "react";
-import ItemList from "./ItemList";
+import TiendaCards from "./TiendaCards";
 
-const ItemListContainer = () => {
+
+const Tienda = () => {
 
     let [items, setItems] = useState([]);
 
@@ -31,10 +32,9 @@ const ItemListContainer = () => {
     return (  
         <>
         <StyledGreeting text={"Nuestra Colección"} />
-        <ItemList items={items}/>
+        <TiendaCards items={items}/>
         </>
     );
 }
  
-export default ItemListContainer;
-
+export default Tienda;

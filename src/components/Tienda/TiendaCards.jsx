@@ -1,5 +1,10 @@
 import React from 'react'
-function ItemList( props ) {
+import ItemCount from "../ItemCount/ItemCount";
+
+function handleOnAdd(count) {
+    alert(`Se agregaron ${count} al carrito`);}
+
+function TiendaCards(props) {
     
   return (
     <>
@@ -16,7 +21,7 @@ function ItemList( props ) {
                             <h3 className="producto__nombre">{title}</h3>
                             <p className="producto__descripcion">{description}</p>
                             <p className="producto__precio">$ {price}</p>
-                            <a className="producto__enlace" href="producto.html">Mas Información</a>
+                            <ItemCount onAdd={handleOnAdd} stock={10} initial={0}/>
                         </div>
                     </div>      
                 </div>
@@ -28,4 +33,5 @@ function ItemList( props ) {
   )
 }
 
-export default ItemList
+export default TiendaCards  
+      

@@ -1,0 +1,37 @@
+.espects {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    margin-top: 1rem;
+    margin-left: 0;
+    font-size: 1.5rem;
+}
+.espects span {
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.boton__card {
+    width: 80%;
+    margin-bottom: 3rem;
+}
+@media (min-width: 768px) {
+    .boton__card {
+        width: 60%;
+    }
+}
+
+
+.detalle {
+    height: 50%;
+    width: 100%;
+    border: 1px solid var(--primary);
+    margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+    .detalle {
+        width: 50%;
+    }
+}

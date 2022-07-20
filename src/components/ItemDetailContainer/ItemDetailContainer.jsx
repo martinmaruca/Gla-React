@@ -1,9 +1,12 @@
-import StyledGreeting from "./StyledGreeting";
-import itemsdata from "../data/ItemsData";
+import StyledGreeting from "../ItemListContainer/StyledGreeting";
+import ItemDetail from "../data/ItemDetail";
 import { useState, useEffect } from "react";
-import ItemList from "./ItemList";
+import DetailCard from "../ItemDetailContainer/DetailCard";
+import "./DetailCard.css";
 
-const ItemListContainer = () => {
+console.log(ItemDetail);
+
+const Tienda = () => {
 
     let [items, setItems] = useState([]);
 
@@ -11,7 +14,7 @@ const ItemListContainer = () => {
 
         let promiseItems = new Promise((resolve, reject) => {
             setTimeout(() => {
-                resolve(itemsdata);
+                resolve(ItemDetail);
             }, 2000);
             setTimeout(() => {
                 reject("Error");
@@ -30,11 +33,10 @@ const ItemListContainer = () => {
  
     return (  
         <>
-        <StyledGreeting text={"Nuestra Colección"} />
-        <ItemList items={items}/>
+        <StyledGreeting text={"Descripción del Producto"} />
+        <DetailCard items={items}/>
         </>
     );
 }
  
-export default ItemListContainer;
-
+export default Tienda;

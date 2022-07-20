@@ -31,9 +31,9 @@ const ItemCount = ({ stock, initial, onAdd }) => {
                 <input className="item-count__input" type="number" max={stock} min={initial} value={count} onChange={updateConuntFromInput} />
                 <button className="item-count__button" onClick={() => updateCount("+")}>+</button>
             </div>
-            <a className="producto__enlace" href="producto.html" onClick={handleAddToCart}>
-            Agregar al carrito
-            </a>
+              <a className="producto__enlace" href="producto.html" onClick={handleAddToCart}>
+              Agregar al carrito
+              </a>
         </>
     );
 }
