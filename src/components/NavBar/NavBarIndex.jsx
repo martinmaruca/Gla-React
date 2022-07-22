@@ -1,4 +1,5 @@
 import CartWidget from "../CartWidGets/CartWidget";
+import { Link} from "react-router-dom";
 import './styles.css';
 
 const NavBarIndex = () => {
@@ -13,9 +14,15 @@ const NavBarIndex = () => {
 
                         <nav className="navegacion">
                             <a className="navegacion__enlace activo" href="/">Inicio</a>
+                            <Link to={"/nosotros"}>
                             <a className="navegacion__enlace" href="/">Nosotros</a>
+                            </Link>
+                            <Link to={"/blog"}>
                             <a className="navegacion__enlace" href="/">Blog</a>
+                            </Link>
+                            <Link to={"/tienda"}>
                             <a className="navegacion__enlace" href="/">Tienda</a>
+                            </Link>
                             <div>
                                 <CartWidget />
                             </div>

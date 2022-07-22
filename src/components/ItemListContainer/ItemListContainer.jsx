@@ -1,17 +1,19 @@
 import StyledGreeting from "./StyledGreeting";
-import itemsdata from "../data/ItemsData";
+import Itemsdata from "../data/ItemsData.json";
 import { useState, useEffect } from "react";
 import ItemList from "./ItemList";
+import Spinner from "../Spinner/Spinner";
 
 const ItemListContainer = () => {
 
     let [items, setItems] = useState([]);
+    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
-
+        setLoading(true);
         let promiseItems = new Promise((resolve, reject) => {
             setTimeout(() => {
-                resolve(itemsdata);
+                resolve(Itemsdata);
             }, 2000);
             setTimeout(() => {
                 reject("Error");
@@ -24,14 +26,16 @@ const ItemListContainer = () => {
         .catch(error => {
             alert(error);
         }).finally(() => {
-            console.log("Finally");
+            setLoading(false);
         })
     }, []);
+
+    if(loading) return <Spinner />;
  
     return (  
         <>
         <StyledGreeting text={"Nuestra Colección"} />
-        <ItemList items={items}/>
+        <ItemList items={items} />
         </>
     );
 }

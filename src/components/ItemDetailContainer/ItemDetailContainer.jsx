@@ -1,17 +1,22 @@
 import StyledGreeting from "../ItemListContainer/StyledGreeting";
-import ItemDetail from "../data/ItemDetail";
+import ItemDetail from "../data/ItemDetail.json";
+import NavBar from "../NavBar/NavBar";
 import { useState, useEffect } from "react";
 import DetailCard from "../ItemDetailContainer/DetailCard";
+import { useParams } from "react-router-dom";
+import Spinner from "../Spinner/Spinner";
 import "./DetailCard.css";
 
-console.log(ItemDetail);
 
 const Tienda = () => {
+    let [items, setItems] = useState({});
+    const param = useParams();
+    const [loading, setLoading] = useState(false);
 
-    let [items, setItems] = useState([]);
-
+    
     useEffect(() => {
 
+        setLoading(true);
         let promiseItems = new Promise((resolve, reject) => {
             setTimeout(() => {
                 resolve(ItemDetail);
@@ -20,23 +25,27 @@ const Tienda = () => {
                 reject("Error");
             }, 2000);
         });
-        
-        promiseItems.then(data => {
-            setItems(data);
+        promiseItems.then((data) => {
+            const findItem = data.filter((item) => item.id === parseInt(param.id));
+            setItems(findItem[0]);
         })
         .catch(error => {
             alert(error);
         }).finally(() => {
-            console.log("Finally");
+            setLoading(false);
         })
-    }, []);
- 
+    },[param.id]);
+    
+    if(loading) return <Spinner />;
+    
     return (  
         <>
+        <NavBar />
         <StyledGreeting text={"Descripción del Producto"} />
         <DetailCard items={items}/>
         </>
     );
-}
- 
+};
+
 export default Tienda;
+    

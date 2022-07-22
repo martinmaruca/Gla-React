@@ -91,6 +91,7 @@ main {
   display: flex;
   gap: 2rem;
   margin-top: 5rem;
+  margin-left: 5rem;
   position: relative;
   z-index: 1;
 }
@@ -111,6 +112,7 @@ main {
 }
 .navegacion__enlace:hover {
   background-color: var(--primary);
+  color: var(--blanco);
 }
 .modelo {
   color: var(--blanco);
@@ -153,7 +155,7 @@ main {
   .productos__grid {
       grid-template-columns: repeat(3, 1fr);
   }
-}
+} 
 
 .producto {
   display: grid;

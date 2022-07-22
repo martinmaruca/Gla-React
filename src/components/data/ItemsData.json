@@ -1,4 +1,4 @@
-const data = [
+[
     {
       "price": 500,
       "id": 1,
@@ -82,7 +82,5 @@ const data = [
         "title": "Hazel",
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique vel consequuntur fugit commodi",
         "image": "/img/guitarra_12.jpg"
-      },
-  ];
-
-  export default data;
+      }
+  ]
