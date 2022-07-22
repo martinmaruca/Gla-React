@@ -13,7 +13,7 @@ function detailCards({items}) {
         
                         <div className="producto__contenido">
                             <h3 className="producto__nombre">{items.title}</h3>
-                            <div className='espects'>
+                            <div className="espects">
                                 <p><span>Marca:</span> {items.marca}</p>
                                 <p><span>Modelo:</span> {items.modelo}</p>
                                 <p><span>Año:</span> {items.año}</p>

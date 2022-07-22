@@ -13,19 +13,11 @@ const NavBarIndex = () => {
                         </a>
 
                         <nav className="navegacion">
-                            <a className="navegacion__enlace activo" href="/">Inicio</a>
-                            <Link to={"/nosotros"}>
-                            <a className="navegacion__enlace" href="/">Nosotros</a>
-                            </Link>
-                            <Link to={"/blog"}>
-                            <a className="navegacion__enlace" href="/">Blog</a>
-                            </Link>
-                            <Link to={"/tienda"}>
-                            <a className="navegacion__enlace" href="/">Tienda</a>
-                            </Link>
-                            <div>
-                                <CartWidget />
-                            </div>
+                            <Link className="navegacion__enlace activo" to="/">Inicio</Link>
+                            <Link className="navegacion__enlace" to="/nosotros">Nosotros</Link>
+                            <Link className="navegacion__enlace" to="/blog">Blog</Link>
+                            <Link className="navegacion__enlace" to="/tienda">Tienda</Link>
+                            <CartWidget />
                         </nav>
                     </div>
 
@@ -37,7 +29,7 @@ const NavBarIndex = () => {
                 </div>
 
                 <img className="header__guitarra" src="img/header_guitarra.png" alt="imagen header guitarra"/>
-            </header>
+        </header>
     </>
     );
 };

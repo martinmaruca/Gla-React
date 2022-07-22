@@ -17,9 +17,7 @@ function ItemList( props ) {
                             <h3 className="producto__nombre">{title}</h3>
                             <p className="producto__descripcion">{description}</p>
                             <p className="producto__precio">$ {price}</p>
-                            <Link to={`item/${id}`}>
-                                <a className="producto__enlace" href="/">Mas Información</a>
-                            </Link>
+                                <Link className="producto__enlace" to={`item/${id}`}>Mas Información</Link>
                         </div>
                     </div>      
                 )

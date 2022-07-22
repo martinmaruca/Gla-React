@@ -4,25 +4,26 @@
     justify-content: center;
     align-items: left;
     margin-top: 1rem;
-    margin-left: 0;
     font-size: 1.5rem;
 }
 .espects span {
     text-transform: uppercase;
     font-weight: 700;
 }
-
 .boton__card {
-    width: 80%;
+    width: 100%;
     margin-bottom: 3rem;
 }
 @media (min-width: 768px) {
     .boton__card {
-        width: 60%;
+        width: 100%;
     }
 }
 
-
+.producto__contenido{
+    padding-top: 2rem;
+    margin: 0 auto;
+}
 .detalle {
     height: 50%;
     width: 100%;

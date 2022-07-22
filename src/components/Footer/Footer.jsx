@@ -7,16 +7,10 @@ const footer = () => {
             <footer className="footer">
                 <div className="footer__contenedor footer__contenido">
                     <nav className="navegacion">
-                        <a className="footer__enlace" href="/">Inicio</a>
-                        <Link to={"/nosotros"}>
-                            <a className="footer__enlace" href="/">Nosotros</a>
-                        </Link>
-                        <Link to={"/blog"}>
-                            <a className="footer__enlace" href="/">Blog</a>
-                        </Link>
-                        <Link to={"/tienda"}>
-                            <a className="footer__enlace" href="/">Tienda</a>
-                        </Link>
+                        <Link className="footer__enlace" to="/">Inicio</Link>
+                        <Link className="footer__enlace" to="/nosotros">Nosotros</Link>
+                        <Link className="footer__enlace" to="/blog">Blog</Link>
+                        <Link className="footer__enlace" to="/tienda">Tienda</Link>
                     </nav>
                     <p className="footer__copyright">Todos los derechos reservados</p>
                 </div>

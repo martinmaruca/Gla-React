@@ -5,8 +5,10 @@ const CartWidget = () => {
     const amount = 4;
     return (
         <>
-          <FontAwesomeIcon icon={faCartShopping} className="cart-widget productos__heading"/>
-          <h3 className='amount'>{amount}</h3>
+          <div className="car">
+            <FontAwesomeIcon icon={faCartShopping} className="cart-widget"/>
+            <h3 className='amount'>{amount}</h3>
+          </div>
         </>
       );
 }

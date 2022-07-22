@@ -98,6 +98,7 @@ main {
 @media (min-width: 768px) { 
   .navegacion {
       margin-top: 0;
+      font-size: 1.8rem;
   }
 }
 .navegacion__enlace {
