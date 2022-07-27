@@ -2,6 +2,7 @@
 {
     "price": 500,
     "id": 1,
+    "stock": 10,
     "title": "Lukather",
     "marca": "Epiphone",
     "modelo": "Special VE",
@@ -18,6 +19,7 @@
 {
     "price": 600,
     "id": 2,
+    "stock": 20,
     "title": "SRV",
     "marca": "Schecter",
     "modelo": "Hellraiser",
@@ -34,6 +36,7 @@
   {
     "price": 750,
     "id": 3,
+    "stock": 30,
     "title": "Borland",
     "marca": "Fiendor",
     "modelo": "Borland-926",
@@ -50,6 +53,7 @@
   {
     "price": 399,
     "id": 4,
+    "stock": 10,
     "title": "VAI",
     "marca": "SX",
     "modelo": "FTL ASH",
@@ -66,12 +70,13 @@
   {
     "price": 1400,
     "id": 5,
+    "stock": 7,
     "title": "Thompson",
     "marca": "D-CAN",
     "modelo": "DC400/FR/BL",
     "año": "2020",
     "origen": "Estados Unidos",
-    "forma": "SuperStrat",
+    "forma": "Soloist",
     "madera": "Arce",
     "color": "Azul",
     "acabados": "Satinado",
@@ -82,6 +87,7 @@
   {
     "price": 1500,
     "id": 6,
+    "stock": 5, 
     "title": "White",
     "marca": "Irvine",
     "modelo": "AET 350 TA",
@@ -98,6 +104,7 @@
   {
     "price": 800,
     "id": 7,
+    "stock": 15,
     "title": "Cobain",
     "marca": "Ferwire",
     "modelo": "Special",
@@ -114,12 +121,13 @@
     {
     "price": 1200,
     "id": 8,
+    "stock": 20,
     "title": "Dale",
     "marca": "Ferwire",
     "modelo": "SG Standard",
     "año": "2003",
     "origen": "Estados Unidos",
-    "forma": "SG",
+    "forma": "Soloist",
     "madera": "Caoba",
     "color": "Rojo",
     "acabados": "Satinado",
@@ -130,6 +138,7 @@
     {
     "price": 950,
     "id": 9,
+    "stock": 15,
     "title": "Krieger",
     "marca": "Ferwire",
     "modelo": "S-NME",
@@ -146,6 +155,7 @@
     {
     "price": 1650,
     "id": 10,
+    "stock": 30,
     "title": "Campbell",
     "marca": "Ferwire",
     "modelo": "Les-3485",
@@ -162,6 +172,7 @@
     {
     "price": 2000,
     "id": 11,
+    "stock": 15,
     "title": "Reed",
     "marca": "Gibson",
     "modelo": "Faded",
@@ -178,6 +189,7 @@
     {
     "price": 1500,
     "id": 12,
+    "stock": 10,
     "title": "Hazel",
     "marca": "firebird",
     "modelo": "Special",

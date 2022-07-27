@@ -2,7 +2,8 @@ import React from 'react'
 import ItemCount from "../ItemCount/ItemCount";
 
 function handleOnAdd(count) {
-    alert(`Se agregaron ${count} al carrito`);}
+    
+}
 
 function TiendaCards(props) {
     

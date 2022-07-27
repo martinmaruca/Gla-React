@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faCartShopping} from '@fortawesome/free-solid-svg-icons';
 
 const CartWidget = () => {
-    const amount = 4;
+    const amount = 0;
     return (
         <>
           <div className="car">

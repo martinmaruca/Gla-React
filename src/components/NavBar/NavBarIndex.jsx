@@ -11,9 +11,8 @@ const NavBarIndex = () => {
                         <a href="/">
                             <img className="header__logo" src="img/logo.svg" alt="imagen logo"/>
                         </a>
-
-                        <nav className="navegacion">
-                            <Link className="navegacion__enlace activo" to="/">Inicio</Link>
+                        <nav className="navegacion">   
+                            <Link className="navegacion__enlace activo" to="/">Inicio</Link>                       
                             <Link className="navegacion__enlace" to="/nosotros">Nosotros</Link>
                             <Link className="navegacion__enlace" to="/blog">Blog</Link>
                             <Link className="navegacion__enlace" to="/tienda">Tienda</Link>

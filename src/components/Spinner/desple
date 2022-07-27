@@ -1,0 +1,8 @@
+<div>
+    <Link className="navegacion__enlace">Tienda</Link>
+    <div>
+        <Link className="navegacion__enlace" to="category/tienda">Todos</Link>
+        <Link className="navegacion__enlace" to="/LesPaul">Les Paul</Link>
+        <Link className="navegacion__enlace" to="/Soloist">Soloist</Link>
+    </div>
+</div>

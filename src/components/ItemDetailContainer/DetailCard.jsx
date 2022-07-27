@@ -1,37 +1,45 @@
-import React from 'react'
+import { useState } from 'react'
+import { Link } from 'react-router-dom';
 import ItemCount from "../ItemCount/ItemCount";
+ 
 
-function handleOnAdd(count) {
-    alert(`Se agregaron ${count} al carrito`);}
-
-function detailCards({items}) {   
+const DetailCards = ({ items }) =>{
+    const [count, setCount] = useState(0);
+    const {image, title, marca, modelo, año, origen, forma, madera, color, acabados, price, stock} = items; 
+    const handleOnAdd = (count) => {
+        setCount(count);
+    };
+        
   return (
-    <>
+        <>
             <main className="productos productos__contenedor">
                     <div className="producto detalle">
-                        <img className="producto__imagen" src={items.image} alt="imagen guitarra"/>
+                        <img className="producto__imagen" src={image} alt="imagen guitarra"/>
         
                         <div className="producto__contenido">
-                            <h3 className="producto__nombre">{items.title}</h3>
+                            <h3 className="producto__nombre">{title}</h3>
                             <div className="espects">
-                                <p><span>Marca:</span> {items.marca}</p>
-                                <p><span>Modelo:</span> {items.modelo}</p>
-                                <p><span>Año:</span> {items.año}</p>
-                                <p><span>Origen:</span> {items.origen}</p>
-                                <p><span>Forma del Cuerpo:</span> {items.forma}</p>
-                                <p><span>Madera:</span> {items.madera}</p>
-                                <p><span>Color:</span> {items.color}</p>
-                                <p><span>Acabados:</span> {items.acabados}</p>                        
+                                <p><span>Marca:</span> {marca}</p>
+                                <p><span>Modelo:</span> {modelo}</p>
+                                <p><span>Año:</span> {año}</p>
+                                <p><span>Origen:</span> {origen}</p>
+                                <p><span>Forma del Cuerpo:</span> {forma}</p>
+                                <p><span>Madera:</span> {madera}</p>
+                                <p><span>Color:</span> {color}</p>
+                                <p><span>Acabados:</span> {acabados}</p>                        
                             </div>      
-                            <p className="producto__precio">$ {items.price}</p>
+                            <p className="producto__precio">$ {price}</p>
                             <div className='boton__card'>
-                                <ItemCount onAdd={handleOnAdd} stock={10} initial={0}/>
+                                {count === 0 ? <ItemCount onAdd={handleOnAdd} stock={stock} initial={0}/> : <h3>Se agregaron {count} productos al carrito </h3>}   
+                            </div>
+                            <div className='boton__card'>
+                                <Link className='producto__enlace' to="/cart">Ir al Carrito</Link>
                             </div>
                         </div>
                     </div>      
             </main>
-    </>
-  )
-}
+       </>
+   );
+};
 
-export default detailCards 
+export default DetailCards 
