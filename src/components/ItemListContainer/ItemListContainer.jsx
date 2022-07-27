@@ -3,8 +3,11 @@ import Itemsdata from "../data/ItemsData.json";
 import { useState, useEffect } from "react";
 import ItemList from "./ItemList";
 import Spinner from "../Spinner/Spinner";
+import { useParams } from "react-router-dom";
 
 const ItemListContainer = () => {
+        
+    const {name} = useParams();
 
     let [items, setItems] = useState([]);
     const [loading, setLoading] = useState(false);
@@ -21,14 +24,19 @@ const ItemListContainer = () => {
         });
         
         promiseItems.then(data => {
-            setItems(data);
+            const datos = data
+            if(name) {
+                setItems(datos.filter(item => item.forma === name));
+            } else {
+                setItems(datos);
+            }
         })
         .catch(error => {
             alert(error);
         }).finally(() => {
             setLoading(false);
         })
-    }, []);
+    }, [name]);
 
     if(loading) return <Spinner />;
  

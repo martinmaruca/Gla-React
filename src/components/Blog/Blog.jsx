@@ -1,11 +1,9 @@
-import NavBar from "../NavBar/NavBar";
 import {Link} from "react-router-dom";
 import "./blog.css";
 
 const blog = () => {
     return (  
         <>
-        <NavBar />
         <section className="blog">
                 <h2 className="blog__heading">Nuestro Blog</h2>
             <div className="blog__contenedor blog__grid">

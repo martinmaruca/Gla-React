@@ -1,9 +1,6 @@
-import NavBar from "../NavBar/NavBar";
-
 const entrada = () => {
     return (  
         <>
-            <NavBar />
             <main className="contenedor">
                 <h2 className="heading">Cómo elegir tu primer guitarra</h2>
 

@@ -1,4 +1,4 @@
-<div>
+<!-- <div>
     <Link className="navegacion__enlace">Tienda</Link>
     <div>
         <Link className="navegacion__enlace" to="category/tienda">Todos</Link>
@@ -6,3 +6,65 @@
         <Link className="navegacion__enlace" to="/Soloist">Soloist</Link>
     </div>
 </div>
+
+
+import NavBar from '../NavBar/NavBar';
+import React, {useState, useEffect} from "react";
+
+let item
+const Cart = ({cart, setCart, handleChange}) => {
+    const[price, setPrice] = useState(0);
+    const {image, title, id} = item;
+    const handleRemove = (id) => {
+        const arr = cart.filter(item => item.id !== id);
+        setCart(arr);
+        handlePrice();
+    };
+
+    const handlePrice = () => {
+        let ans = 0;
+        cart.map ((item) => (ans += item.amount * item.price));
+        setPrice(ans);
+    };
+
+    useEffect(() => {
+        handlePrice();
+    }); 
+    
+    return ( 
+        <>
+            <NavBar/> 
+            <div className="panel">
+                {cart.map(item => (
+                    <div className="item carro__item">
+                        <div className="item__imagen">
+                            <img src={image} alt="imagen guitarra"/>
+                        </div>
+                        <div className="item__contenido">
+                            <p className="item__nombre item">{title}</p>
+                            <div className="botones carro__botones">
+                                <i onclick={() => handleChange(item, -1)}>-</i>
+                                <div className="cantidad item">producto</div>
+                                <i onclick={() => handleChange(item, 1)}>+</i> 
+                            </div>
+                            <p className="item__precio item">$ {item.precio}</p>
+                            <h3 className= "subtotal item">$ producto * precio</h3>
+                            <i onclick={() => handleRemove(id)} >x</i>
+                        </div>
+                    </div>
+                    ))};
+                    <div className="carro__total">
+                        <div>
+                            <a onclick={() => handleRemove(id)} className="vaciar__btn" href="/">Vaciar Carro</a>
+                        </div>
+                        <div>
+                            <h2>Total a pagar: $ {price}</h2>
+                        </div>
+                    </div>    
+            </div> 
+        </>   
+    );
+};
+
+export default Cart;
+ -->

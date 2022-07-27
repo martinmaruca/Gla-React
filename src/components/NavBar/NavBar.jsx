@@ -16,7 +16,14 @@ const NavBar = () => {
                         <Link className="navegacion__enlace activo" to="/">Inicio</Link>
                         <Link className="navegacion__enlace" to="/nosotros">Nosotros</Link>
                         <Link className="navegacion__enlace" to="/blog">Blog</Link>
-                        <Link className="navegacion__enlace" to="/tienda">Tienda</Link>
+                        <div class="dropdown">
+                            <Link className="navegacion__enlace" to="/tienda">Tienda</Link>
+                            <ul className="dropdown-menu">
+                                <li><Link className="nav_enlace" to="/tienda">Productos</Link></li>
+                                <li><Link className="nav_enlace" to="forma/lespaul">Les Paul</Link></li>
+                                <li><Link className="nav_enlace" to="forma/soloist">Soloist</Link></li>
+                            </ul>
+                        </div>
                         <CartWidget />
                     </nav>
                 </div>

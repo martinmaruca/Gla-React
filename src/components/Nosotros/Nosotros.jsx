@@ -1,10 +1,8 @@
-import NavBar from "../NavBar/NavBar";
 import "./nosotros.css";
 
 const nosotros = () => {
     return (  
         <>
-            <NavBar />
             <main className="nosotros nosotros__contenedor">
                 <h2 className="nosotros__heading">Nosotros</h2>
 

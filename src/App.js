@@ -1,6 +1,7 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import NavBarIndex from './components/NavBar/NavBarIndex';
+// import NavBarIndex from './components/NavBar/NavBarIndex';
+import NavBar from './components/NavBar/NavBar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import Clases from './components/Clases/Clases';
 import BlogInicio from './components/Blog/BlogInicio';
@@ -19,10 +20,11 @@ function App() {
     <>
       {/* <ContextProvider>  */}
         <BrowserRouter>
+          <NavBar /> 
           <Routes>
             <Route index element= {<>
-              <NavBarIndex />
-              <ItemListContainer />
+              {/* <NavBarIndex /> */}
+              <ItemListContainer /> 
               <Clases />
               <BlogInicio />
             </> }/>      
@@ -31,6 +33,7 @@ function App() {
             <Route path="/tienda" element={<Tienda />} /> 
             <Route path="/entrada" element={<Entrada />} />
             <Route path="item/:id" element={<ItemDetailContarner />} />
+            <Route path="/forma/:name" element={<ItemListContainer />} />
             <Route path="cart" element={<Cart />} />
           </Routes>
           <Footer />  

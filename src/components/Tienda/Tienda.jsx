@@ -1,13 +1,10 @@
 import StyledGreeting from "../ItemListContainer/StyledGreeting";
 import itemsdata from "../data/ItemsData";
-import NavBar from "../NavBar/NavBar";
 import { useState, useEffect } from "react";
 import TiendaCards from "./TiendaCards";
 import Spinner from "../Spinner/Spinner";
 
-
 const Tienda = () => {
-    
     let [items, setItems] = useState([]);
     const [loading, setLoading] = useState(false);
     
@@ -36,7 +33,6 @@ const Tienda = () => {
  
     return (  
         <>
-        <NavBar />
         <StyledGreeting text={"Nuestra Colección"} />
         <TiendaCards items={items}/>
         </>
