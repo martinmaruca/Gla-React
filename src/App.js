@@ -13,12 +13,13 @@ import Entrada from './components/Entrada/Entrada';
 import ItemDetailContarner from './components/ItemDetailContainer/ItemDetailContainer'; 
 import {BrowserRouter, Routes, Route } from 'react-router-dom';
 import Cart from './components/Cart/Cart';
-// import ContextProvider from './components/CartContext/ContextProvider';
+import CartProvider from './components/CartContext/CartContext';
+
 
 function App() {
   return (
     <>
-      {/* <ContextProvider>  */}
+      <CartProvider>  
         <BrowserRouter>
           <NavBar /> 
           <Routes>
@@ -34,11 +35,11 @@ function App() {
             <Route path="/entrada" element={<Entrada />} />
             <Route path="item/:id" element={<ItemDetailContarner />} />
             <Route path="/forma/:name" element={<ItemListContainer />} />
-            <Route path="cart" element={<Cart />} />
+            <Route path="/cart" element={<Cart />} />
           </Routes>
           <Footer />  
         </BrowserRouter>
-      {/* </ContextProvider>  */}
+      </CartProvider>  
     </>
 );
 }

@@ -1,11 +1,17 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom';
 import ItemCount from "../ItemCount/ItemCount";
+// import { useCartContext } from "../CartContext/CartContext";        
  
 
 const DetailCards = ({ items }) =>{
     const [count, setCount] = useState(0);
     const {image, title, marca, modelo, año, origen, forma, madera, color, acabados, price, stock} = items; 
+    // const {addItem} = useCartContext();
+
+/*     const onAdd = (quantity) => {
+        addItem (items, quantity);
+    } */
     const handleOnAdd = (count) => {
         setCount(count);
     };
