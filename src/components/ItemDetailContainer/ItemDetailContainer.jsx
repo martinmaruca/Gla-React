@@ -1,6 +1,5 @@
 import StyledGreeting from "../ItemListContainer/StyledGreeting";
 import ItemDetail from "../data/ItemDetail.json";
-import NavBar from "../NavBar/NavBar";
 import { useState, useEffect } from "react";
 import DetailCard from "../ItemDetailContainer/DetailCard";
 import { useParams } from "react-router-dom";
@@ -40,7 +39,6 @@ const Tienda = () => {
     
     return (  
         <>
-        <NavBar />
         <StyledGreeting text={"Descripción del Producto"} />
         <DetailCard items={items}/>
         </>

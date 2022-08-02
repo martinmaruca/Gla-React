@@ -1,3 +1,4 @@
+import React from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 // import NavBarIndex from './components/NavBar/NavBarIndex';
@@ -12,15 +13,16 @@ import Footer from './components/Footer/Footer';
 import Entrada from './components/Entrada/Entrada';
 import ItemDetailContarner from './components/ItemDetailContainer/ItemDetailContainer'; 
 import {BrowserRouter, Routes, Route } from 'react-router-dom';
+import CartProvider from './components/Cart/CartContext';
 import Cart from './components/Cart/Cart';
-import CartProvider from './components/CartContext/CartContext';
+
 
 
 function App() {
   return (
     <>
-      <CartProvider>  
-        <BrowserRouter>
+      <BrowserRouter>
+        <CartProvider>   
           <NavBar /> 
           <Routes>
             <Route index element= {<>
@@ -38,8 +40,8 @@ function App() {
             <Route path="/cart" element={<Cart />} />
           </Routes>
           <Footer />  
-        </BrowserRouter>
-      </CartProvider>  
+        </CartProvider> 
+      </BrowserRouter>
     </>
 );
 }

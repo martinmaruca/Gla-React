@@ -1,0 +1,126 @@
+.item {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 50%;
+    font-size: 1.4rem;
+    font-weight: 700;
+    align-items: center;
+}
+.item .item__imagen {
+    width: 5rem;
+    height: 10rem; 
+    padding: 0.5rem;
+    z-index: 1;  
+}
+.carro__item .item {
+    background-color: var(--blanco);   
+}
+.item__contenido {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center; 
+    border-bottom: solid 1px var(--primary);
+}
+
+.item__contenido .fas{
+    color: #ff0000;
+    cursor: pointer;
+}
+
+.item__contenido .botones {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 1.4rem;
+    padding: 0.5rem;
+    border-radius: 5px;
+}
+.item__contenido .subtotal {
+    display: flex;
+    font-size: 1.4rem;
+    color: var(--negro);
+}
+.item__contenido .botones .cantidad {
+    padding: 0 0.5rem 0 0.5rem ;
+}
+.item__contenido .botones i {
+    font-size: 1.5rem;
+    padding: 0 .5rem;
+    color: var(--primary);
+    cursor: pointer;
+}
+
+/* .panel {
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transform: translate(100%, 0);
+    transition: transform 1s ease;
+} */
+/* @media (min-width: 768px) { 
+    .panel {
+    top: 19.5%;
+    left: 48%;
+    width: 100%;
+    height: 100vh;
+    transform: translate(100%, 0);
+    }
+} */
+    
+.panel.is-active {
+    transform: translate(0, 0);
+    overflow-y: scroll;
+}
+
+.noHay {
+    background-color: var(--blanco);
+    text-align: center;
+    margin: 0;
+}
+
+#total {
+    width: 50%;
+    border: solid 3px var(--primary);
+    border-radius: 5px; 
+    background-color: var(--blanco); 
+}
+
+.carro__total {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.carro__total h2{
+    font-size: 1.4rem;
+    color: var(--negro);
+    width: auto;
+    padding: 1rem;
+    margin-right: 1rem;
+}
+.vaciar {
+    width: 40%;
+}
+.vaciar__btn {
+    margin-top: 2rem;
+    text-decoration: none;
+    color: var(--negro);
+    padding: 1rem 5rem;
+    border: 2px solid var(--primary);
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    transition-property: background-color;
+    transition-duration: .3s;
+    margin-left: 1rem;
+
+}
+.vaciar__btn:hover {
+    background-color: var(--primary);
+    color: var(--blanco);
+}

@@ -6,7 +6,7 @@ import Spinner from "../Spinner/Spinner";
 import { useParams } from "react-router-dom";
 
 const ItemListContainer = () => {
-        
+
     const {name} = useParams();
 
     let [items, setItems] = useState([]);
@@ -49,4 +49,3 @@ const ItemListContainer = () => {
 }
  
 export default ItemListContainer;
-
