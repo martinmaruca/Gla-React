@@ -2,7 +2,6 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom';
 import ItemCount from "../ItemCount/ItemCount";
 import { useCartContext } from "../Cart/CartContext";        
-import { data } from 'autoprefixer';
  
 
 const DetailCards = ({ items }) =>{
@@ -12,7 +11,7 @@ const DetailCards = ({ items }) =>{
 
     const handleOnAdd = (count) => {
         setCount(count);
-        addProduct(data, items);
+        addProduct(items, count);
 
     };
         
@@ -39,7 +38,7 @@ const DetailCards = ({ items }) =>{
                                 {count === 0 ? <ItemCount onAdd={handleOnAdd} stock={stock} initial={0}/> : <h3>Se agregaron {count} productos al carrito </h3>}   
                             </div>
                             <div className='boton__card'>
-                                <Link  onAdd={addProduct} className='producto__enlace' to="/cart">Ir al Carrito</Link>
+                                <Link className='producto__enlace' to="/cart">Ir al Carrito</Link>
                             </div>
                         </div>
                     </div>      

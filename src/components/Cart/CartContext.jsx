@@ -12,6 +12,7 @@ const CartProvider = ({children}) => {
                 if (product.item.id === item.id) {
                     return {...product, quantity: product.quantity + quantity};
                 } else {
+                    console.log(product)
                     return product;
                 }
             });
@@ -27,8 +28,6 @@ const CartProvider = ({children}) => {
     }
     
     const totalProducts = () => cart.reduce((acc, product) => acc + product.quantity, 0);
-
-    console.log('carrito: ', cart);
     const clearCart = () => setCart([]);
 
     const isInCart = (id) => cart.find(product => product.id === id) ? true : false;

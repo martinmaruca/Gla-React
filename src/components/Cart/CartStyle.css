@@ -52,30 +52,6 @@
     cursor: pointer;
 }
 
-/* .panel {
-    position: fixed;
-    z-index: 999;
-    top: 0;
-    left: 0;
-    width: 100%;
-    transform: translate(100%, 0);
-    transition: transform 1s ease;
-} */
-/* @media (min-width: 768px) { 
-    .panel {
-    top: 19.5%;
-    left: 48%;
-    width: 100%;
-    height: 100vh;
-    transform: translate(100%, 0);
-    }
-} */
-    
-.panel.is-active {
-    transform: translate(0, 0);
-    overflow-y: scroll;
-}
-
 .noHay {
     background-color: var(--blanco);
     text-align: center;
@@ -121,6 +97,31 @@
 
 }
 .vaciar__btn:hover {
+    background-color: var(--primary);
+    color: var(--blanco);
+}
+
+.cart{
+    display: flex;
+    justify-content: space-around; 
+    align-items: center;
+    height: 100vh;
+}
+.tienda__btn {
+    text-decoration: none;
+    color: var(--negro);
+    padding: 1rem 5rem;
+    border: 2px solid var(--primary);
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    transition-property: background-color;
+    transition-duration: .3s;
+    
+
+}
+.tienda__btn:hover {
     background-color: var(--primary);
     color: var(--blanco);
 }
