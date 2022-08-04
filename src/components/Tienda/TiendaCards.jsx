@@ -33,4 +33,3 @@ function TiendaCards(props) {
 }
 
 export default TiendaCards  
-      

@@ -7,6 +7,7 @@ import Spinner from "../Spinner/Spinner";
 import "./DetailCard.css";
 
 
+
 const Tienda = () => {
     let [items, setItems] = useState({});
     const param = useParams();

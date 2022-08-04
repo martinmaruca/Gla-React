@@ -35,7 +35,6 @@ const Cart = ({product}) => {
         <>    
                 <div className="panel">
                     {cart.map(product => {
-                     console.log(product);
                         return (
                             <div className="item carro__item">
                                 <div className="item__imagen">
@@ -50,7 +49,7 @@ const Cart = ({product}) => {
                                     </div>
                                     <p className="item__precio item">$ {product.item.price}</p>
                                     <h3 className= "subtotal item">$ {product.quantity * product.item.price}</h3>
-                                    <i><FontAwesomeIcon className="fas" icon={faX} onClick={() => removeProduct(product.id)}/></i>
+                                    <i><FontAwesomeIcon className="fas" icon={faX} onClick={() => removeProduct(product.item.id)}/></i>
                                 </div>
                             </div>
                       )})};
@@ -58,10 +57,10 @@ const Cart = ({product}) => {
                 <div className="total"> 
                     <div className="carro__total">
                         <div>
-                            <a onClick={() => clearCart(product.item.id)} className="vaciar__btn" href="/">Vaciar Carro</a>
+                            <a onClick={() => clearCart(product)} className="vaciar__btn" href="/">Vaciar Carro</a>
                         </div>
                         <div>
-                            <h2>Total a pagar: $ {totalPrice} </h2>
+                            <h2>Total a pagar: $ {totalPrice()} </h2>
                         </div>
                     </div>    
                 </div>

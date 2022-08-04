@@ -1,11 +1,13 @@
 import StyledGreeting from "../ItemListContainer/StyledGreeting";
 import itemsdata from "../data/ItemsData";
 import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import TiendaCards from "./TiendaCards";
 import Spinner from "../Spinner/Spinner";
 
 const Tienda = () => {
     let [items, setItems] = useState([]);
+    const param = useParams();
     const [loading, setLoading] = useState(false);
     
     useEffect(() => {
@@ -27,7 +29,7 @@ const Tienda = () => {
         }).finally(() => {
             setLoading(false);
         })
-    }, []);
+    }, [param.id]);
 
     if(loading) return <Spinner />;
  
