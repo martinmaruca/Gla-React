@@ -5,33 +5,28 @@ import Spinner from "../Spinner/Spinner";
 import { getFirestore, collection, getDocs } from "firebase/firestore";
 
 const ItemListContainer = () => {
+  const [items, setItems] = useState([]);
+  const [loading, setLoading] = useState(false);
 
-    const [items, setItems] = useState([]);
-    const [loading, setLoading] = useState(false);
+  useEffect(() => {
+    setLoading(true);
+    const db = getFirestore();
+    const productCollection = collection(db, "ItemCollection");
+    const dataDocument = getDocs(productCollection).then((snapshot) => {
+      const data = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
+      setItems(data);
+      setLoading(false);
+    });
+  }, []);
 
-    useEffect(() => {
-        setLoading(true);
-        const db = getFirestore();
-        console.log(db);
-        const productCollection = collection(db,"ItemCollection");
-        const dataDocument = getDocs(productCollection)
-           .then((snapshot) => {
-            const data = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
-            setItems(data);
-            console.log(data);
-            setLoading(false);    
-        }); 
-        
-    },[]);
-    
-    if(loading) return <Spinner />;
+  if (loading) return <Spinner />;
 
-    return (
-        <>
-        <StyledGreeting text={"Nuestra Colección"} />
-        <ItemList items={items} />
-        </>
-        );
-}
- 
+  return (
+    <>
+      <StyledGreeting text={"Nuestra Colección"} />
+      <ItemList items={items} />
+    </>
+  );
+};
+
 export default ItemListContainer;
