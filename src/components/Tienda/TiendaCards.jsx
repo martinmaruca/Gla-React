@@ -1,35 +1,53 @@
-import React from 'react'
+import { useState } from "react";
 import ItemCount from "../ItemCount/ItemCount";
+import { useCartContext } from "../Cart/CartContext";
 
-function handleOnAdd(count) {
-    
-}
+const TiendaCards = ({ items }) => {
+  const [count, setCount] = useState(0);
+  const { addProduct } = useCartContext();
 
-function TiendaCards(props) {
-    
+  const handleOnAdd = (count) => {
+    setCount(count);
+    addProduct(items, count);
+  };
+
   return (
-  
-    <main className="productos productos__contenedor">
+    <>
+      <main className="productos productos__contenedor">
         <div className="productos__grid">
-            {props.items.map(item => {
-            const {title, price, description, image} = item
+          {items.map((item) => {
+            const { title, price, description, image, stock } = item;
             return (
-                <div className="producto">
-                    <img className="producto__imagen" src={image} alt="imagen guitarra"/>
-        
-                    <div className="producto__contenido">
-                        <h3 className="producto__nombre">{title}</h3>
-                        <p className="producto__descripcion">{description}</p>
-                        <p className="producto__precio">$ {price}</p>
-                        <ItemCount onAdd={handleOnAdd} stock={10} initial={0}/>
-                    </div>
-                </div>      
-            )
-           } )}
+              <div className="producto">
+                <img
+                  className="producto__imagen"
+                  src={image}
+                  alt="imagen guitarra"
+                />
 
+                <div className="producto__contenido">
+                  <h3 className="producto__nombre">{title}</h3>
+                  <p className="producto__descripcion">{description}</p>
+                  <p className="producto__precio">$ {price}</p>
+                  <div className="boton__card">
+                    {count === 0 ? (
+                      <ItemCount
+                        onAdd={handleOnAdd}
+                        stock={stock}
+                        initial={0}
+                      />
+                    ) : (
+                      <h3>Se agregaron {count} productos al carrito </h3>
+                    )}
+                  </div>
+                </div>
+              </div>
+            );
+          })}
         </div>
-    </main>
-  )
-}
+      </main>
+    </>
+  );
+};
 
-export default TiendaCards  
+export default TiendaCards;

@@ -1,11 +1,10 @@
-import React from "react";
+/* import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faX, faMinus, faPlus } from "@fortawesome/free-solid-svg-icons";
 import "./CartStyle.css";
 import { useCartContext } from "./CartContext";
 import swal from "sweetalert";
 import { Link } from "react-router-dom";
-import { data } from "autoprefixer";
 
 const showAlert = () => {
   swal({
@@ -119,15 +118,16 @@ const Cart = ({ product }) => {
 };
 
 export default Cart;
+ */
 
-/* import React from "react";
+import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faX, faMinus, faPlus } from "@fortawesome/free-solid-svg-icons";
 import "./CartStyle.css";
 import { useCartContext } from "./CartContext";
 import swal from "sweetalert";
 import { Link } from "react-router-dom";
-import { addDoc, collection, getFirestore } from "firebase/firestore";
+/* import { addDoc, collection, getFirestore } from "firebase/firestore"; */
 
 const showAlert = () => {
   swal({
@@ -141,7 +141,7 @@ const showAlert = () => {
 const Cart = ({ product }) => {
   const { cart, removeProduct, clearCart, totalPrice } = useCartContext();
 
-  const order = {
+  /* const order = {
     buyer: {
       name: "martin",
       lastname: "matuca",
@@ -163,7 +163,7 @@ const Cart = ({ product }) => {
     const db = getFirestore();
     const orderCollection = collection(db, "orders");
     addDoc(orderCollection, order);
-  };
+  }; */
 
   if (cart.length === 0) {
     return (
@@ -231,7 +231,7 @@ const Cart = ({ product }) => {
               >
                 Vaciar Carro
               </a>
-              <a onClick={handleClick} className="vaciar__btn" href="/">
+              <a onClick={clearCart} className="vaciar__btn" href="/">
                 Finalizar Compra
               </a>
             </div>
@@ -246,4 +246,3 @@ const Cart = ({ product }) => {
 };
 
 export default Cart;
- */
