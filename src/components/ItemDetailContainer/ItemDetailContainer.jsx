@@ -9,14 +9,12 @@ import { getFirestore, getDoc, doc } from "firebase/firestore";
 const Tienda = () => {
   let [items, setItems] = useState({});
   const param = useParams();
-  console.log(param);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     setLoading(true);
     const db = getFirestore();
     const productDetail = doc(db, "ItemCollection", param.id);
-    console.log(productDetail);
     getDoc(productDetail).then((res) =>
       setItems({ id: res.id, ...res.data() })
     );

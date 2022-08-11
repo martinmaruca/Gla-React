@@ -1,0 +1,27 @@
+:root {
+  --primary: #e99401;
+  --negro: #262626;
+  --blanco: #fff;
+  --fuente-principal: "Outfit", sans-serif;
+}
+
+.order-info {
+  width: 50rem;
+  height: 100%;
+  margin: 0 auto;
+  margin-top: 5rem;
+  padding: 5rem;
+  font-size: 2rem;
+  color: var(--primary);
+  border: solid 2px var(--primary);
+  border-radius: 10px;
+}
+
+label {
+  margin: 1rem 0;
+}
+
+.form-control {
+  height: 4rem;
+  font-size: large;
+}

@@ -11,10 +11,11 @@ import Nosotoros from './components/Nosotros/Nosotros';
 import Tienda from './components/Tienda/Tienda';
 import Footer from './components/Footer/Footer';
 import Entrada from './components/Entrada/Entrada';
-import ItemDetailContarner from './components/ItemDetailContainer/ItemDetailContainer'; 
-import {BrowserRouter, Routes, Route } from 'react-router-dom';
+import ItemDetailContarner from './components/ItemDetailContainer/ItemDetailContainer';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import CartProvider from './components/Cart/CartContext';
 import Cart from './components/Cart/Cart';
+import Order from './components/Order/Order';
 
 
 
@@ -22,28 +23,30 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <CartProvider>   
-          <NavBar /> 
+        <CartProvider>
+          <NavBar />
           <Routes>
-            <Route index element= {<>
+            <Route index element={<>
               {/* <NavBarIndex /> */}
-              <ItemListContainer /> 
+              <ItemListContainer />
               <Clases />
               <BlogInicio />
-            </> }/>      
-            <Route path="/nosotros" element={<Nosotoros />} /> 
-            <Route path="/blog" element={<Blog />} /> 
-            <Route path="/tienda" element={<Tienda />} /> 
+            </>} />
+            <Route path="/nosotros" element={<Nosotoros />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/tienda" element={<Tienda />} />
             <Route path="/entrada" element={<Entrada />} />
             <Route path="item/:id" element={<ItemDetailContarner />} />
             <Route path="/forma/:name" element={<ItemListContainer />} />
             <Route path="/cart" element={<Cart />} />
+            <Route path="/Order" element={<Order />} />
+
           </Routes>
-          <Footer />  
-        </CartProvider> 
+          <Footer />
+        </CartProvider>
       </BrowserRouter>
     </>
-);
+  );
 }
 
 export default App;

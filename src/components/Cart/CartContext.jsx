@@ -13,14 +13,6 @@ export const useCartContext = () => useContext(CartContext);
 const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
 
-  /*   const order = () => {
-    const db = getFirestore();
-    const orderCollection = collection(db, "orders");
-    addDoc(orderCollection, cart).then((ref) =>
-      res.id.catch((err) => console.log(err))
-    );
-  };
- */
   const addProduct = (item, quantity) => {
     if (isInCart(item.id)) {
       const newCart = cart.map((product) => {
@@ -47,10 +39,10 @@ const CartProvider = ({ children }) => {
   const clearCart = () => setCart([]);
 
   const isInCart = (id) =>
-    cart.find((product) => product.id === id) ? true : false;
+    cart.find((product) => product.item.id === id) ? true : false;
 
   const removeProduct = (id) =>
-    setCart(cart.filter((product) => product.id !== id));
+    setCart(cart.filter((product) => product.item.id !== id));
 
   /*   const order = {
     buyer: {
