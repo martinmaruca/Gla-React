@@ -5,7 +5,7 @@ import { useCartContext } from "../Cart/CartContext";
 import swal from "sweetalert";
 import { addDoc, collection, getFirestore } from "firebase/firestore";
 
-const errorAlert = () => {
+const successAlert = () => {
   swal({
     title: "Su pedido ha sido procesado",
     text: "Sera despachado en un plazo de 24 horas",
@@ -115,7 +115,10 @@ const OrderInfo = () => {
               id="localidad"
             />
             <Link
-              onClick={(errorAlert, handleClick)}
+              onClick={() => {
+                successAlert();
+                handleClick();
+              }}
               to="/"
               className="producto__enlace"
             >

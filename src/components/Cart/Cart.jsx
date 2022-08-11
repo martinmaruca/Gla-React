@@ -5,7 +5,6 @@ import "./CartStyle.css";
 import { useCartContext } from "./CartContext";
 import swal from "sweetalert";
 import { Link } from "react-router-dom";
-/* import { addDoc, collection, getFirestore } from "firebase/firestore"; */
 
 const showAlert = () => {
   swal({
@@ -100,27 +99,3 @@ const Cart = ({ product }) => {
 };
 
 export default Cart;
-
-/*   const order = {
-    buyer: {
-      name: "martin",
-      lastname: "matuca",
-      email: "martin@gmail.com",
-      phone: "2213892444",
-      address: "45 4567 la plata",
-    },
-    products: Cart.map((product) => ({
-      id: product.id,
-      title: product.title,
-      price: product.price,
-      quantity: product.quantity,
-    })),
-
-    total: totalPrice(),
-  };
-
-  const handleClick = () => {
-    const db = getFirestore();
-    const orderCollection = collection(db, "orders");
-    addDoc(orderCollection, order);
-  }; */
