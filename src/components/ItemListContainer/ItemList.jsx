@@ -8,7 +8,7 @@ function ItemList(props) {
         {props.items.map((item) => {
           const { id, title, price, description, image } = item;
           return (
-            <div className="producto" key={props.id}>
+            <div className="producto" key={id}>
               <img
                 className="producto__imagen"
                 src={image}

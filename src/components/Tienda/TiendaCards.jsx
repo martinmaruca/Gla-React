@@ -18,7 +18,7 @@ const TiendaCards = ({ items }) => {
           {items.map((item) => {
             const { title, price, description, image, stock } = item;
             return (
-              <div className="producto" key={items.id}>
+              <div className="producto" key={price}>
                 <img
                   className="producto__imagen"
                   src={image}
