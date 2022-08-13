@@ -36,7 +36,7 @@ function App() {
             <Route path="/blog" element={<Blog />} />
             <Route path="/tienda" element={<Tienda />} />
             <Route path="/entrada" element={<Entrada />} />
-            <Route path="item/:id" element={<ItemDetailContarner />} />
+            <Route path="tienda/item/:id" element={<ItemDetailContarner />} />
             <Route path="/forma/:name" element={<ItemListContainer />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/Order" element={<Order />} />

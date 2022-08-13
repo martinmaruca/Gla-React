@@ -1,0 +1,23 @@
+.cart-widget {
+  font-size: 2rem;
+  color: var(--primary);
+}
+@media (min-width: 678px) {
+  .cart-widget {
+    font-size: 2.8rem;
+    padding: 0 1rem;
+  }
+}
+.car {
+  display: flex;
+  align-items: flex-start;
+}
+
+.amount {
+  margin-left: 0.5rem;
+}
+@media (min-width: 768px) {
+  .amount {
+    margin-left: 0;
+  }
+}

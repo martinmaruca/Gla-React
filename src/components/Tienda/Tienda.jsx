@@ -1,12 +1,14 @@
 import StyledGreeting from "../ItemListContainer/StyledGreeting";
-import { getFirestore, collection, getDocs } from "firebase/firestore";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import TiendaCards from "./TiendaCards";
 import Spinner from "../Spinner/Spinner";
+import { getFirestore, collection, getDocs } from "firebase/firestore";
+import { useParams } from "react-router-dom";
 
 const Tienda = () => {
-  let [items, setItems] = useState([]);
+  const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(false);
+  const { name } = useParams();
 
   useEffect(() => {
     setLoading(true);
@@ -18,7 +20,9 @@ const Tienda = () => {
       )
     );
     setLoading(false);
-  }, []);
+  }, [name]);
+
+  if (loading) return <Spinner />;
 
   if (loading) return <Spinner />;
 

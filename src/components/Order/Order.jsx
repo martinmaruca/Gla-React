@@ -1,71 +1,64 @@
 import React, { useState } from "react";
 import "./order.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useCartContext } from "../Cart/CartContext";
 import swal from "sweetalert";
 import { addDoc, collection, getFirestore } from "firebase/firestore";
 
-const successAlert = () => {
+const successAlert = (id) =>
   swal({
     title: "Su pedido ha sido procesado",
-    text: "Sera despachado en un plazo de 24 horas",
+    text: `Sera despachado en un plazo de 24 horas, 
+
+    Su ID de compra es: ${id}`,
     icon: "success",
     button: "Aceptar",
   });
-};
-
 const OrderInfo = () => {
-  const { cart, totalPrice } = useCartContext();
+  const { cart, totalPrice, clearCart } = useCartContext();
+  const navigate = useNavigate();
 
-  const [nombre, setNombre] = useState("");
-  const [apellido, setApellido] = useState("");
-  const [email, setEmail] = useState("");
-  const [telefono, setTelefono] = useState("");
-  const [direccion, setDireccion] = useState("");
-  const [localidad, setLocalidad] = useState("");
+  const [form, setForm] = useState({
+    nombre: "",
+    apellido: "",
+    email: "",
+    telefono: "",
+    direccion: "",
+    localidad: "",
+  });
 
-  const onChangeNombre = (e) => {
-    setNombre(e.target.value);
-  };
-  const onChangeApellido = (e) => {
-    setApellido(e.target.value);
-  };
-  const onChangeEmail = (e) => {
-    setEmail(e.target.value);
-  };
-  const onChangeTelefono = (e) => {
-    setTelefono(e.target.value);
-  };
-  const onChangeDireccion = (e) => {
-    setDireccion(e.target.value);
-  };
-  const onChangeLocalidad = (e) => {
-    setLocalidad(e.target.value);
-  };
-
-  const order = {
-    buyer: {
-      nombre: { nombre },
-      apellido: { apellido },
-      email: { email },
-      telefono: { telefono },
-      direccion: { direccion },
-      localidad: { localidad },
-    },
-    products: cart.map((product) => ({
-      id: product.item.id,
-      title: product.item.title,
-      price: product.item.price,
-      quantity: product.quantity,
-    })),
-
-    total: totalPrice(),
+  const handleInputChange = ({ currentTarget }) => {
+    setForm({ ...form, [currentTarget.name]: currentTarget.value });
   };
 
   const handleClick = () => {
+    const order = {
+      buyer: {
+        nombre: { nombre: form.nombre },
+        apellido: { apellido: form.apellido },
+        email: { email: form.email },
+        telefono: { telefono: form.telefono },
+        direccion: { direccion: form.direccion },
+        localidad: { localidad: form.localidad },
+      },
+      products: cart.map((product) => ({
+        id: product.item.id,
+        title: product.item.title,
+        price: product.item.price,
+        quantity: product.quantity,
+      })),
+
+      total: totalPrice(),
+    };
+
     const db = getFirestore();
     const orderCollection = collection(db, "orders");
-    addDoc(orderCollection, order);
+    addDoc(orderCollection, order).then((res) => {
+      successAlert(res.id).then(() => {
+        clearCart();
+        navigate("/");
+      });
+    });
   };
 
   return (
@@ -81,7 +74,7 @@ const OrderInfo = () => {
               name="nombre"
               type="text"
               className="form-control"
-              onChange={onChangeNombre}
+              onChange={handleInputChange}
               id="nombre"
             />
             <label htmlFor="">Apellido</label>
@@ -89,7 +82,7 @@ const OrderInfo = () => {
               name="apellido"
               type="text"
               className="form-control"
-              onChange={onChangeApellido}
+              onChange={handleInputChange}
               id="apellido"
             />
             <label htmlFor="">Telefono</label>
@@ -97,7 +90,7 @@ const OrderInfo = () => {
               name="telefono"
               type="text"
               className="form-control"
-              onChange={onChangeEmail}
+              onChange={handleInputChange}
               id="telefono"
             />
             <label htmlFor="">E-mail</label>
@@ -105,7 +98,7 @@ const OrderInfo = () => {
               name="email"
               type="text"
               className="form-control"
-              onChange={onChangeTelefono}
+              onChange={handleInputChange}
               id="email"
             />
             <label htmlFor="">Dirección</label>
@@ -113,7 +106,7 @@ const OrderInfo = () => {
               name="direccion"
               type="text"
               className="form-control"
-              onChange={onChangeDireccion}
+              onChange={handleInputChange}
               id="direccion"
             />
             <label htmlFor="">Localidad</label>
@@ -121,17 +114,10 @@ const OrderInfo = () => {
               name="localidad"
               type="text"
               className="form-control"
-              onChange={onChangeLocalidad}
+              onChange={handleInputChange}
               id="localidad"
             />
-            <Link
-              onClick={() => {
-                successAlert();
-                handleClick();
-              }}
-              to="/"
-              className="producto__enlace"
-            >
+            <Link onClick={handleClick} to="/" className="producto__enlace">
               Enviar Pedido
             </Link>
           </div>

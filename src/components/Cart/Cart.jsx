@@ -1,6 +1,6 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faX, faMinus, faPlus } from "@fortawesome/free-solid-svg-icons";
+import { faX } from "@fortawesome/free-solid-svg-icons";
 import "./CartStyle.css";
 import { useCartContext } from "./CartContext";
 import swal from "sweetalert";
@@ -36,27 +36,13 @@ const Cart = ({ product }) => {
         <div className="panel">
           {cart.map((product) => {
             return (
-              <div className="item carro__item" key={cart.id}>
+              <div className="item carro__item" key={cart}>
                 <div className="item__imagen">
                   <img src={product.item.image} alt="imagen guitarra" />
                 </div>
                 <div className="item__contenido">
                   <p className="item__nombre item">{product.item.title}</p>
-                  <div className="botones carro__botones">
-                    <i>
-                      <FontAwesomeIcon
-                        icon={faMinus}
-                        onClick={() => product(product.quantity, -1)}
-                      />
-                    </i>
-                    <div className="cantidad item">{product.quantity}</div>
-                    <i>
-                      <FontAwesomeIcon
-                        icon={faPlus}
-                        onClick={() => product(product.quantity, 1)}
-                      />
-                    </i>
-                  </div>
+                  <p className="cantidad item">Cantidad:{product.quantity}</p>
                   <p className="item__precio item">$ {product.item.price}</p>
                   <h3 className="subtotal item">
                     $ {product.quantity * product.item.price}
@@ -76,7 +62,7 @@ const Cart = ({ product }) => {
         </div>
         <div className="total">
           <div className="carro__total">
-            <div>
+            <div className="btn-cart">
               <a
                 onClick={() => clearCart(product)}
                 className="vaciar__btn"
@@ -88,7 +74,7 @@ const Cart = ({ product }) => {
                 Procesar Compra
               </Link>
             </div>
-            <div>
+            <div className="total__pagar">
               <h2>Total a pagar: $ {totalPrice()} </h2>
             </div>
           </div>
