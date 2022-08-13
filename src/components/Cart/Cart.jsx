@@ -36,7 +36,7 @@ const Cart = ({ product }) => {
         <div className="panel">
           {cart.map((product) => {
             return (
-              <div className="item carro__item">
+              <div className="item carro__item" key={cart.id}>
                 <div className="item__imagen">
                   <img src={product.item.image} alt="imagen guitarra" />
                 </div>

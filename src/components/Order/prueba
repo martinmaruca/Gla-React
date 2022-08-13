@@ -1,0 +1,12 @@
+// nombre - apellido - email - telefono - direccion - localidad
+const [nombre, setNombre] = useState("");
+console.log(nombre);
+const [apellido, setApellido] = useState("");
+const [email, setEmail] = useState("");
+const [telefono, setTelefono] = useState("");
+const [direccion, setDireccion] = useState("");
+const [localidad, setLocalidad] = useState("");
+
+const onChangeNombre = (e) => {
+    e.target.value = setNombre(e.target.value);
+};

@@ -17,30 +17,40 @@ const successAlert = () => {
 const OrderInfo = () => {
   const { cart, totalPrice } = useCartContext();
 
-  const initialValues = {
-    nombre: "",
-    apellido: "",
-    email: "",
-    telefono: "",
-    direccion: "",
-    localidad: "",
-  };
-  const [values, setValues] = useState(initialValues);
+  const [nombre, setNombre] = useState("");
+  const [apellido, setApellido] = useState("");
+  const [email, setEmail] = useState("");
+  const [telefono, setTelefono] = useState("");
+  const [direccion, setDireccion] = useState("");
+  const [localidad, setLocalidad] = useState("");
 
-  const handleImputChange = (e) => {
-    const { name, value } = e.target;
-    console.log(name, value);
-    setValues({ ...values, [name]: value });
+  const onChangeNombre = (e) => {
+    setNombre(e.target.value);
+  };
+  const onChangeApellido = (e) => {
+    setApellido(e.target.value);
+  };
+  const onChangeEmail = (e) => {
+    setEmail(e.target.value);
+  };
+  const onChangeTelefono = (e) => {
+    setTelefono(e.target.value);
+  };
+  const onChangeDireccion = (e) => {
+    setDireccion(e.target.value);
+  };
+  const onChangeLocalidad = (e) => {
+    setLocalidad(e.target.value);
   };
 
   const order = {
     buyer: {
-      nombre: "Martin",
-      apellido: "Maruca",
-      email: "mmmmm@gmail.com",
-      telefono: "123456789",
-      direccion: "Calle falsa 123",
-      localidad: "Ciudad falsa",
+      nombre: { nombre },
+      apellido: { apellido },
+      email: { email },
+      telefono: { telefono },
+      direccion: { direccion },
+      localidad: { localidad },
     },
     products: cart.map((product) => ({
       id: product.item.id,
@@ -71,7 +81,7 @@ const OrderInfo = () => {
               name="nombre"
               type="text"
               className="form-control"
-              onChange={handleImputChange}
+              onChange={onChangeNombre}
               id="nombre"
             />
             <label htmlFor="">Apellido</label>
@@ -79,7 +89,7 @@ const OrderInfo = () => {
               name="apellido"
               type="text"
               className="form-control"
-              onChange={handleImputChange}
+              onChange={onChangeApellido}
               id="apellido"
             />
             <label htmlFor="">Telefono</label>
@@ -87,7 +97,7 @@ const OrderInfo = () => {
               name="telefono"
               type="text"
               className="form-control"
-              onChange={handleImputChange}
+              onChange={onChangeEmail}
               id="telefono"
             />
             <label htmlFor="">E-mail</label>
@@ -95,7 +105,7 @@ const OrderInfo = () => {
               name="email"
               type="text"
               className="form-control"
-              onChange={handleImputChange}
+              onChange={onChangeTelefono}
               id="email"
             />
             <label htmlFor="">Dirección</label>
@@ -103,7 +113,7 @@ const OrderInfo = () => {
               name="direccion"
               type="text"
               className="form-control"
-              onChange={handleImputChange}
+              onChange={onChangeDireccion}
               id="direccion"
             />
             <label htmlFor="">Localidad</label>
@@ -111,7 +121,7 @@ const OrderInfo = () => {
               name="localidad"
               type="text"
               className="form-control"
-              onChange={handleImputChange}
+              onChange={onChangeLocalidad}
               id="localidad"
             />
             <Link
