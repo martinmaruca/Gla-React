@@ -24,8 +24,8 @@ const ItemListContainer = () => {
     if (name) {
       const queyFilter = query(
         productCollection,
-        /* where("forma", "==", "Les Paul"), */
-        where("forma", "==", "Soloist")
+        where("forma", "==", "Les Paul" || "Soloist")
+        /* where("forma", "==", "Soloist") */
       );
       getDocs(queyFilter).then((res) =>
         setItems(

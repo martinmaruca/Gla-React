@@ -46,6 +46,8 @@ const OrderInfo = () => {
         title: product.item.title,
         price: product.item.price,
         quantity: product.quantity,
+        stock: product.item.stock,
+        date: new Date(),
       })),
 
       total: totalPrice(),
